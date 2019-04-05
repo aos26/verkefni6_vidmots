@@ -1,0 +1,46 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="nidurstodur">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="allarStodvar">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="vedurstod" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="atime"/>
+                    <xs:element type="xs:string" name="err"/>
+                    <xs:element name="spaStodvar">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="vedurspa" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="D"/>
+                                <xs:element type="xs:byte" name="F"/>
+                                <xs:element type="xs:byte" name="N"/>
+                                <xs:element type="xs:float" name="R"/>
+                                <xs:element type="xs:byte" name="T"/>
+                                <xs:element type="xs:byte" name="TD"/>
+                                <xs:element type="xs:string" name="W"/>
+                                <xs:element type="xs:string" name="ftime"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:short" name="id"/>
+                    <xs:element type="xs:anyURI" name="link"/>
+                    <xs:element type="xs:string" name="name"/>
+                    <xs:element type="xs:byte" name="valid"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

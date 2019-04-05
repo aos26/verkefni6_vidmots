@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane prefHeight="304.0" prefWidth="616.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.utlit.SkodaVedurspaController">
+               <children>
+                  <Label layoutX="32.0" layoutY="24.0" prefHeight="17.0" prefWidth="60.0" text="Veðurspá  " />
+                  <Label fx:id="vedurstod" layoutX="92.0" layoutY="24.0" prefHeight="17.0" prefWidth="254.0" text="XXX" />
+      <TableView fx:id="vedurspaTafla" layoutX="10.0" layoutY="43.0" prefHeight="251.0" prefWidth="598.0">
+        <columns>
+            <TableColumn fx:id="vedurMynd" prefWidth="85.33331489562988" text="Mynd" />
+          <TableColumn fx:id="vedur" editable="false" prefWidth="85.33336639404297" sortable="false" style="-fx-wrap-text: true;" text="Veður" />
+          <TableColumn fx:id="vindatt" prefWidth="67.33331298828125" text="Vindátt" />
+            <TableColumn fx:id="vindhradi" prefWidth="67.99995422363281" text="Vindhraði" />
+            <TableColumn fx:id="hitastig" editable="false" prefWidth="73.99993896484375" sortable="false" text="Hitastig" />
+            <TableColumn fx:id="dagsetning" editable="false" prefWidth="73.33331298828125" sortable="false" text="Dagsetning" />
+            <TableColumn fx:id="timi" editable="false" prefWidth="58.000030517578125" sortable="false" text="Tími" />
+            <TableColumn fx:id="daggarmark" editable="false" minWidth="0.0" prefWidth="81.3333740234375" sortable="false" text="Daggarmark" />
+            <TableColumn fx:id="skyjahula" editable="false" minWidth="0.0" prefWidth="79.33331298828125" sortable="false" text="Skýjahula" />
+            <TableColumn fx:id="uppsofnudUrkoma" editable="false" minWidth="0.0" prefWidth="71.33331298828125" sortable="false" text="Uppsöfnuð &#10;úrkoma" />
+        </columns>
+      </TableView>
+               </children>
+            </Pane>
