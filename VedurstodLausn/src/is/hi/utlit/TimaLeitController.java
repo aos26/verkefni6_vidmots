@@ -16,6 +16,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.SingleSelectionModel;
+import javafx.scene.control.Slider;
 
 /**
  * Controller klasi fyrir að afmarka leit í veðurspám eftir kls. 
@@ -26,7 +27,7 @@ import javafx.scene.control.SingleSelectionModel;
 public class TimaLeitController implements Initializable {
 
     @FXML
-    private ComboBox<String> leitKlukkustund;   // Leitar drop-down
+    private Slider leitKlukkustund;   // Leitar drop-down
 
     private AdalController adalController;      // Aðalcontroller
     private SkodaVedurspaController spaController; // Veðurspácontroller
@@ -87,7 +88,7 @@ public class TimaLeitController implements Initializable {
      * Setur valið á tímanum sem allan daginn
      */
     public void allanDaginn() {
-        leitKlukkustund.getSelectionModel().select(0);
+        leitKlukkustund.getValue();
     }
 
     /**

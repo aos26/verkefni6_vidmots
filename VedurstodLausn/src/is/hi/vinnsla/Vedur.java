@@ -36,7 +36,12 @@ public class Vedur {
 
     private final static ArrayList<Mynd> myndir = new ArrayList<Mynd>(Arrays.asList(Mynd.Alskyjad, Mynd.Heidskirt,
             Mynd.Snjokoma, Mynd.Lettskyjad, Mynd.LitilshattarSnjokoma, Mynd.Skyjad,
-            Mynd.LitilshattarSlydda, Mynd.Snjoel, Mynd.Clear, Mynd.LitilshattarRigning, Mynd.Skurir, Mynd.Rigning, Mynd.Overcast, Mynd.PartlyCloudy));
+            Mynd.LitilshattarSlydda, Mynd.Snjoel, Mynd.LitilshattarRigning, Mynd.Skurir, Mynd.Rigning, Mynd.Slydda, Mynd.Slydduel,
+            Mynd.Skystrokar, Mynd.Moldrok, Mynd.Skafrenningur, Mynd.Thoka, Mynd.LitilshattarSuld, Mynd.Suld, Mynd.Frostrigning,
+            Mynd.Hagl, Mynd.LitilshattarThrumuvedur, Mynd.Overcast, Mynd.PartlyCloudy, Mynd.Clear, Mynd.LightRain, Mynd.LightSleet, 
+            Mynd.LightSnow, Mynd.RainShowers, Mynd.Cloudy, Mynd.Snow, Mynd.SnowShowers, Mynd.Rain, Mynd.Sleet, Mynd.SleetShowers,
+            Mynd.DustDevil, Mynd.DustStorm, Mynd.BlowingSnow, Mynd.Fog, Mynd.LightDrizzle, Mynd.Drizzle, Mynd.FreezingRain,
+            Mynd.Hail, Mynd.LightThunder));
 
     public ObjectProperty<Mynd> getMyndAfVedri() {
         return myndAfVedri;

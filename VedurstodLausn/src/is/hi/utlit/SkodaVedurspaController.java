@@ -48,6 +48,46 @@ public class SkodaVedurspaController implements Initializable {
     private TableColumn<Vedur, Mynd> vedurMynd;
     @FXML
     private TableColumn<Vedur, String> daggarmark;
+
+    public Label getVedurstod() {
+        return vedurstod;
+    }
+
+    public TableColumn<Vedur, String> getVedur() {
+        return vedur;
+    }
+
+    public TableColumn<Vedur, String> getVindatt() {
+        return vindatt;
+    }
+
+    public TableColumn<Vedur, String> getHitastig() {
+        return hitastig;
+    }
+
+    public TableColumn<Vedur, String> getVindhradi() {
+        return vindhradi;
+    }
+
+    public TableColumn<Vedur, LocalDate> getDagsetning() {
+        return dagsetning;
+    }
+
+    public TableColumn<Vedur, LocalTime> getTimi() {
+        return timi;
+    }
+
+    public TableColumn<Vedur, String> getDaggarmark() {
+        return daggarmark;
+    }
+
+    public TableColumn<Vedur, String> getSkyjahula() {
+        return skyjahula;
+    }
+
+    public TableColumn<Vedur, String> getUppsofnudUrkoma() {
+        return uppsofnudUrkoma;
+    }
     @FXML
     private TableColumn<Vedur, String> skyjahula;
     @FXML

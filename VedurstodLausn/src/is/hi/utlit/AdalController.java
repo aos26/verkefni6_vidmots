@@ -57,6 +57,8 @@ public class AdalController implements Initializable {
     private Button islenska;
     
     private boolean isEN = false;
+    @FXML
+    private Button skodaButton;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -199,9 +201,31 @@ public class AdalController implements Initializable {
         if(isEN == true)
         {
             skodaVedurspaController.getVedurMynd().setText("Image");
+            skodaVedurspaController.getVedur().setText("Weather");
+            skodaVedurspaController.getVindatt().setText("Wind Direction");
+            skodaVedurspaController.getVindhradi().setText("Wind speed");
+            skodaVedurspaController.getHitastig().setText("Temperature");
+            skodaVedurspaController.getTimi().setText("Time");
+            skodaVedurspaController.getDagsetning().setText("Date");
+            skodaVedurspaController.getDaggarmark().setText("Dew point");
+            skodaVedurspaController.getSkyjahula().setText("Cloud cover");
+            skodaVedurspaController.getUppsofnudUrkoma().setText("Cumulative percipitation");
+            skodaVedurspaController.getVedurstod().setText("Station:");
+            skodaButton.setText("Examine");
         }
         else {
             skodaVedurspaController.getVedurMynd().setText("Mynd");
+            skodaVedurspaController.getVedur().setText("Veður");
+            skodaVedurspaController.getVindatt().setText("Vindátt");
+            skodaVedurspaController.getVindhradi().setText("Vindhraði");
+            skodaVedurspaController.getHitastig().setText("Hitastig");
+            skodaVedurspaController.getTimi().setText("Tími");
+            skodaVedurspaController.getDagsetning().setText("Dagsetning");
+            skodaVedurspaController.getDaggarmark().setText("Daggarmark");
+            skodaVedurspaController.getSkyjahula().setText("Skýjahula");
+            skodaVedurspaController.getUppsofnudUrkoma().setText("Uppsöfnuð úrkoma");
+            skodaVedurspaController.getVedurstod().setText("Veðurstöð:");
+            skodaButton.setText("Skoða");
         }
     }
 }
