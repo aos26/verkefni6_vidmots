@@ -7,6 +7,8 @@ import is.hi.vinnsla.Vedur;
 import is.hi.vinnsla.KlukkustundirModel;
 import is.hi.vinnsla.Nidurstodur;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -40,6 +42,10 @@ public class TimaLeitController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH");  
+        LocalDateTime now = LocalDateTime.now();
+        String time = dtf.format(now);
+        
     }
 
     /**
@@ -88,7 +94,7 @@ public class TimaLeitController implements Initializable {
      * Setur valið á tímanum sem allan daginn
      */
     public void allanDaginn() {
-        leitKlukkustund.getValue();
+        //leitKlukkustund.getItems().get(0);
     }
 
     /**
@@ -101,7 +107,6 @@ public class TimaLeitController implements Initializable {
      */
     public void setjaUppTimaController(AdalController aThis, SkodaVedurspaController skodaVedurspaController) {
         setControllera(aThis, skodaVedurspaController);
-        setjaKlukkustundir();
         frumstillaGognHandlerTimaAfmorkun();
     }
 
@@ -111,36 +116,33 @@ public class TimaLeitController implements Initializable {
      * Fyrsta stakið er valið
      */
     private void frumstillaGognHandlerTimaAfmorkun() {
-
-        SingleSelectionModel tsl = leitKlukkustund.getSelectionModel();
-        tsl.selectedItemProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+        leitKlukkustund.valueProperty().addListener(new ChangeListener<Number>() {
+            public void changed(ObservableValue <? extends Number >  
+                      observable, Number oldValue, Number newValue) 
+            { 
                 ObservableList<Nidurstodur.Vedurstod.Vedurspa> obl = 
                         adalController.vedursparValdrarStodvar();
                 ObservableList<Nidurstodur.Vedurstod.Vedurspa> valdirLidir;
+                newValue = Math.round(newValue.doubleValue());
                 if (newValue == null) {
                     return;
                 }
-                if (newValue.equals(ALLAN_DAGINN)) {
+                String currValue;
+                if(newValue.intValue() < 10 && newValue.intValue() != 0){
+                    currValue = "0";
+                    currValue += newValue.toString();
+                } else {
+                    currValue = newValue.toString();
+                }
+                if (newValue.intValue()==0) {
                     valdirLidir = obl;
                 } else {
-                    valdirLidir = veljaVedurspaKl(obl, newValue);
+                    valdirLidir = veljaVedurspaKl(obl, currValue);
                 }
+                
                 ObservableList<Vedur> obs = spaController.geraVedurspaLista(valdirLidir);
                 spaController.uppfaeraVedurspa(obs);
             }
         });
-        setjaKlukkustundir();
-        leitKlukkustund.getSelectionModel().selectFirst();
-    }
-
-    /**
-     * Setur viðeigandi klukkustundir í combobox
-     */
-    private void setjaKlukkustundir() {
-        KlukkustundirModel kls = new KlukkustundirModel(adalController.vedursparValdrarStodvar());
-        leitKlukkustund.getSelectionModel().select(null);
-        leitKlukkustund.setItems(kls.getItems());
     }
 }

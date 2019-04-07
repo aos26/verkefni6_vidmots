@@ -19,7 +19,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -27,6 +30,8 @@ import javafx.scene.control.MultipleSelectionModel;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 
 /**
@@ -59,6 +64,11 @@ public class AdalController implements Initializable {
     private boolean isEN = false;
     @FXML
     private Button skodaButton;
+    
+    Stage stage;
+    Parent nyRot;
+    @FXML
+    private Button afram;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -227,5 +237,28 @@ public class AdalController implements Initializable {
             skodaVedurspaController.getVedurstod().setText("Veðurstöð:");
             skodaButton.setText("Skoða");
         }
+    }
+
+    @FXML
+    private void birtaVedurkort(ActionEvent event) throws IOException {
+        Stage(new Stage(),"VedurKort");
+        
+    }
+    
+    /***
+     * Býr til stage (svið) með því að hlaða inn notendaviðmóti sem hefur 
+     * rót í skránni nafnAstage.fxml 
+     * @param stage Sviðið (stage) 
+     * @param nafnAStage Nafn á lýsingu á notendaviðmóti 
+     * @throws IOException 
+     */
+    private void Stage(Stage stage, String nafnAStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource(nafnAStage
+                + ".fxml"));
+        
+        Scene scene = new Scene(root);
+        
+        stage.setScene(scene);
+        stage.show();
     }
 }

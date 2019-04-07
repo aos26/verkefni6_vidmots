@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Slider?>
 
 
-<ComboBox fx:id="leitKlukkustund" prefHeight="25.0" prefWidth="102.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" />
+<Slider fx:id="leitKlukkustund" majorTickUnit="1.0" max="23.0" minorTickCount="0" prefHeight="38.0" prefWidth="247.0" showTickLabels="true" showTickMarks="true" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.utlit.TimaLeitController" />

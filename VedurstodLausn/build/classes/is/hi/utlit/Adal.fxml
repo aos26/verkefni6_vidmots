@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="387.0" prefWidth="940.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.utlit.AdalController">
+<AnchorPane id="AnchorPane" prefHeight="387.0" prefWidth="940.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.utlit.AdalController">
    <children>
       <HBox layoutY="2.0" maxWidth="1.7976931348623157E308" prefHeight="377.0" prefWidth="641.0" AnchorPane.leftAnchor="10.0">
          <children>
@@ -18,7 +18,7 @@
                <children>
                   <ToolBar prefHeight="40.0" prefWidth="341.0">
                     <items>
-                      <Button mnemonicParsing="false" onAction="#skodaHandler" text="Skoða" />
+                      <Button fx:id="skodaButton" mnemonicParsing="false" onAction="#skodaHandler" text="Skoða" />
                         <TextField fx:id="leitaVedurstod" onAction="#leitaHandler" prefHeight="25.0" prefWidth="136.0" />
                         <fx:include fx:id="dagsetningarleit" source="Dagsetningarleit.fxml" />
                     </items>
@@ -33,7 +33,7 @@
            <fx:include fx:id="skodaVedurspa" source="SkodaVedurspa.fxml" />
          </children>
       </HBox>
-      <ToolBar layoutX="538.0" layoutY="3.0" prefHeight="40.0" prefWidth="285.0">
+      <ToolBar layoutX="537.0" layoutY="3.0" prefHeight="50.0" prefWidth="404.0">
          <items>
             <Label prefHeight="17.0" prefWidth="110.0" text="Velja klukkustund:" />
             <fx:include fx:id="timaleit" source="TimaLeit.fxml" />
@@ -41,5 +41,6 @@
       </ToolBar>
       <Button fx:id="enska" layoutX="874.0" layoutY="336.0" mnemonicParsing="false" onAction="#birtaEN" />
       <Button fx:id="islenska" layoutX="815.0" layoutY="336.0" mnemonicParsing="false" onAction="#birtaIS" />
+      <Button fx:id="afram" layoutX="651.0" layoutY="336.0" mnemonicParsing="false" onAction="#birtaVedurkort" text="Skoða veðurkort" />
    </children>
 </AnchorPane>
